@@ -504,10 +504,11 @@
 
 ## Comments
 
-  - Use `/** ... */` for multi-line comments. Include a description, specify types and values for all parameters and return values.
+  - Use `/** ... */` for multi-line comments. Include a description, specify types and values for all parameters and return values. The description should start on the first line of the comment so that it can be read when the comment is folded in the IDE. 
 
     ```javascript
     // bad
+    //
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -521,9 +522,8 @@
     }
 
     // good
-    /**
-     * make() returns a new element
-     * based on the passed in tag name
+    /** make() returns a new element based on the 
+     * passed in tag name.
      *
      * @param {String} tag
      * @return {Element} element
@@ -533,6 +533,34 @@
       // ...stuff...
 
       return element;
+    }
+    ```
+  - All function declarations should be preceeded by a multi-line comment with a description of the function's purpose, as well as its parameters and return value.
+
+    ```javascript
+    // bad
+    function doOne(tag) {
+      // ...stuff...
+      return result;
+    }
+    function doTwo(tag) {
+      // ...stuff...
+      return result;
+    }
+    function doThree(tag) {
+      // ...stuff...
+      return result;
+    }
+
+    // good
+    /** Takes a parameter and does stuff with it. Then returns the result.
+     *
+     * @param {String}    tag
+     * @return {Integer}  result
+     */
+    function doStuff(tag) {
+      // ...stuff...
+      return result;
     }
     ```
 
