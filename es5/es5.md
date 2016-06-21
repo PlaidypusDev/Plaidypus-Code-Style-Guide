@@ -1,8 +1,8 @@
-# Seraph Group, Inc. JavaScript Style Guide() {
+# Plaidypus JavaScript ES5 Style Guide() {
 
 *Based on the Airbnb Javascript Style Guide*
 
-
+s
 ## Table of Contents
 
   1. [Objects](#objects)
