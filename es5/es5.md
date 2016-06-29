@@ -123,9 +123,10 @@
     });
     // Returns [6,4,2]
     // items = [6,4,2]
-    
-    
-    // Chaining
+    ```
+  
+  - Chaining  
+    ```javascript
     // bad
     items.forEach(function(item){
         return item *= 2;
