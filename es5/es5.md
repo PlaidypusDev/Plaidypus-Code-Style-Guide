@@ -98,6 +98,96 @@
     }
     ```
 
+  - Use `.map()` instead of `.forEach()` or `for` whenever you can. `.map()` is more efficient and supports chaining.
+
+    ```javascript
+    var items = [3,2,1];
+    
+    // bad
+    for (var i = 0; i < items.length; i++) {
+        items[i] *= 2;
+    }
+    // Returns 2
+    // items = [6,4,2]
+    
+    // bad
+    items.forEach(function(item){
+        return item *= 2;
+    });
+    // Returns undefined
+    // items = [3,2,1]
+    
+    // good
+    items.map(function(item){
+        return item *= 2;
+    });
+    // Returns [6,4,2]
+    // items = [6,4,2]
+    
+    
+    // Chaining
+    // bad
+    items.forEach(function(item){
+        return item *= 2;
+    })
+    .sort();
+    // => TypeError: Cannot read property 'sort' of undefined
+    
+    // good
+    items.map(function(item){
+        return item *= 2;
+    });
+    // Returns [6,4,2]
+    // items = [2,4,6]
+    ```
+    
+  - Use `.forEach` when you are not returning an array.
+  
+    ```javascript
+    var items = [3,2,1];
+    
+    // bad
+    items.map(function(item){
+        console.log(item);
+    });
+    // 1
+    // 2
+    // 3
+    // returns [undefined, undefined, undefined]
+    
+    // good
+    items.forEach(function(item){
+        console.log(item);
+    });
+    // 1
+    // 2
+    // 3
+    // returns undefined
+    ```
+    
+  - Only use `for` when you need to use `break`.
+  
+    ```javascript
+    var items = [3,2,1];
+    
+    // bad
+    items.map(function(item){
+        break;
+    });
+    // Uncaught SyntaxError: Illegal break statement
+    
+    // bad
+    items.forEach(function(item){
+        break;
+    });
+    // Uncaught SyntaxError: Illegal break statement
+    
+    // good
+    for (var i = 0; i < items.length; i++) {
+        break;
+    }
+    ```
+    
 **[⬆ back to top](#table-of-contents)**
 
 
