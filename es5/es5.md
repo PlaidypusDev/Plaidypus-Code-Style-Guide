@@ -137,7 +137,8 @@
     // good
     items.map(function(item){
         return item *= 2;
-    });
+    })
+    .sort();
     // Returns [6,4,2]
     // items = [2,4,6]
     ```
