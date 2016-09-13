@@ -1,4 +1,4 @@
-# Plaidypus CSS / Sass Styleguide
+# Plaidypus CSS / Sass Style Guide
 
 *Based on Airbnb's CSS/Sass style guide*
 
